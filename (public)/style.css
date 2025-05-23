@@ -43,7 +43,7 @@ h3 {
   flex-grow: 1;
 }
 
-#planetShip {
+#planet-ship {
   display: block;
   margin: auto;
   transition: width 0.5s ease, height 0.5s ease; /* Smooth transition for width and height */
@@ -64,7 +64,7 @@ h3 {
   margin: auto;
 }
 
-#DownloadOnAppStoreBadge {
+#download-on-app-store-badge {
   cursor: pointer;
 }
 
@@ -86,7 +86,7 @@ h3 {
     padding-left: 16rem;
     padding-right: 16rem;
   }
-  #planetShip {
+  #planet-ship {
     width: 110%;
     height: auto;
   }
@@ -128,7 +128,7 @@ h3 {
     padding-bottom: 2.5rem;
   }
 
-  #planetShip {
+  #planet-ship {
     width: 60%;
     height: auto;
   }
@@ -176,7 +176,7 @@ h3 {
     padding-bottom: 2.5rem;
   }
 
-  #planetShip {
+  #planet-ship {
     width: 80%;
     height: auto;
   }
