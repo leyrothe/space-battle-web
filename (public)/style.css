@@ -1,5 +1,10 @@
+:root {
+  --background-color: #000;
+  --primary-color: #ffff;
+}
+
 body {
-  background-color: black;
+  background-color: var(--background-color);
   font-family: "Roboto", serif;
 }
 
@@ -11,7 +16,7 @@ main {
 
 h1 {
   font-size: 6rem;
-  color: white;
+  color: var(--primary-color);
   text-align: right;
   margin-bottom: 0rem;
   padding-right: 3rem;
@@ -19,7 +24,7 @@ h1 {
 
 h2 {
   font-size: 3rem;
-  color: white;
+  color: var(--primary-color);
   text-align: right;
   margin-top: 0rem;
   padding-right: 3rem;
@@ -27,7 +32,7 @@ h2 {
 
 h3 {
   font-size: 3rem;
-  color: white;
+  color: var(--primary-color);
   text-align: center;
   margin-bottom: 2.5rem;
 }
@@ -135,7 +140,7 @@ h3 {
 
   h1 {
     font-size: 3rem;
-    color: white;
+    color: var(--primary-color);
     text-align: right;
     margin-bottom: 0rem;
     padding-right: 1rem;
@@ -143,7 +148,7 @@ h3 {
 
   h2 {
     font-size: 1.5rem;
-    color: white;
+    color: var(--primary-color);
     text-align: right;
     margin-top: 0rem;
     padding-right: 1rem;
