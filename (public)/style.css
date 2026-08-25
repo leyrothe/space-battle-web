@@ -1,197 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 :root {
   --background-color: #000;
-  --primary-color: #ffff;
+  --white-color: #fff;
+  --h1-mobile-size: 36px;
+  --h1-desktop-size: 96px;
+  --h2-mobile-size: 18px;
+  --h2-desktop-size: 48px;
+  --text-size: 14px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Mobile first approach*/
+.text {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
 }
 
 body {
   background-color: var(--background-color);
   font-family: "Roboto", serif;
-}
-
-main {
-  text-align: center;
-  padding-left: 7rem;
-  padding-right: 7rem;
+  padding: 0 24px;
+  margin: auto;
 }
 
 h1 {
-  font-size: 6rem;
-  color: var(--primary-color);
-  text-align: right;
-  margin-bottom: 0rem;
-  padding-right: 3rem;
+  font-size: var(--h1-mobile-size);
+  color: var(--white-color);
+  margin-top: 16px;
 }
 
-h2 {
-  font-size: 3rem;
-  color: var(--primary-color);
-  text-align: right;
-  margin-top: 0rem;
-  padding-right: 3rem;
-}
-
+h2,
 h3 {
-  font-size: 3rem;
-  color: var(--primary-color);
+  font-size: var(--h2-mobile-size);
+  color: var(--white-color);
+  margin-bottom: 16px;
+}
+
+.play-game-container {
+  height: 50vh;
+  margin: 0 auto;
   text-align: center;
-  margin-bottom: 2.5rem;
+  background-image: url("assets/Planet.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.25s ease;
 }
 
-.container {
-  display: flex;
+.play-game-container.game-active {
+  height: 100vh;
+  width: 100vw;
 }
 
-.planet {
-  text-align: left;
-  float: left;
-  order: 1;
-  flex-grow: 1;
+.iframe-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.game-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 #planet-ship {
-  display: block;
-  margin: auto;
-  transition: width 0.5s ease, height 0.5s ease; /* Smooth transition for width and height */
   width: 100%;
-  height: auto; /* Maintain aspect ratio */
+  height: 100%;
+}
+
+.play-button-wrapper {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.play-button {
+  background-color: var(--background-color);
+  width: 200px;
+  color: var(--white-color);
+  padding: 16px 24px;
+  border: 6px double var(--white-color);
+  border-radius: 16px;
+  font-size: 28px;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+  transform-origin: center;
+}
+
+.play-button:hover {
+  text-decoration: underline var(--white-color);
+  animation-play-state: paused;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+p {
+  color: var(--white-color);
+  font-size: var(--text-size);
+  text-align: center;
 }
 
 .available {
-  float: right;
-  text-align: right;
-  order: 2;
-  flex-grow: 1;
+  margin: 32px;
 }
 
-#apple {
-  display: block;
-  padding-bottom: 2.5rem;
-  margin: auto;
+.svg-wrapper {
+  margin: 16px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 0 150px;
+  gap: 16px;
+  justify-content: center;
 }
 
-#download-on-app-store-badge {
+.apple {
+  width: 150px;
+  height: auto;
+  min-height: 40px;
+}
+
+.google,
+.amazon {
+  width: 164px;
+  height: auto;
+  min-height: 40px;
+}
+
+footer {
+  padding: 24px 0;
+}
+
+.go-to-web {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  color: var(--white-color);
+  background-color: var(--background-color);
+  height: auto;
+  min-height: 40px;
+  padding: 8px 16px;
+  border: 2px solid var(--white-color);
+  border-radius: 0px 16px 16px 0px;
+  font-size: 16px;
   cursor: pointer;
+  z-index: 600;
+  margin: 32px auto;
 }
 
-#google {
-  display: block;
-  margin: auto;
-  padding-bottom: 2.5rem;
-  cursor: pointer;
+.go-to-web:hover {
+text-decoration: underline;
 }
 
-#amazon {
-  display: block;
-  margin: auto;
-  cursor: pointer;
+.close-btn {
+  margin-right: 8px;
 }
 
-@media (min-width: 2000px) {
-  main {
-    padding-left: 16rem;
-    padding-right: 16rem;
-  }
-  #planet-ship {
-    width: 110%;
-    height: auto;
-  }
-}
-
-@media (max-width: 1008px) {
-  main {
-    padding: 0;
-  }
-  .available {
-    text-align: center;
-  }
-
-  .container {
+  @media (min-width: 992px) {
+  /* rules for displays that are above 992px */
+  .available{
     display: flex;
-    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 24px;
+    align-items: center;
   }
 
-  #apple {
-    display: inline-block;
-    padding-right: 1.5rem;
-    padding-top: 2rem;
-    width: 12.125rem;
-    height: 4.0625rem;
+  .svg-wrapper{
+    flex-wrap: nowrap;
   }
 
-  #google {
-    display: inline-block;
-    padding-top: 2rem;
-    padding-right: 1.5rem;
-    width: 13.6875rem;
-    height: 4.0625rem;
-  }
-
-  #amazon {
-    display: inline-block;
-    width: 13.9375rem;
-    height: 4.0625rem;
-    padding-bottom: 2.5rem;
-  }
-
-  #planet-ship {
-    width: 60%;
-    height: auto;
-  }
-
-  h1 {
-    font-size: 3rem;
-    color: var(--primary-color);
-    text-align: right;
-    margin-bottom: 0rem;
-    padding-right: 1rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    text-align: right;
-    margin-top: 0rem;
-    padding-right: 1rem;
-  }
-
-  h3 {
-    display: none;
+  h3{
+    margin-bottom: 0;
   }
 }
 
-@media (max-width: 800px) {
-  #apple {
-    display: inline-block;
-    padding-right: 1.5rem;
-    padding-top: 2rem;
-    width: 9.375rem;
-    height: 3.125rem;
+@media screen and (max-width: 1024px) and (orientation: portrait) 
+and (pointer: coarse) and (hover: none) {
+  
+  .play-game-container.game-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
   }
 
-  #google {
-    display: inline-block;
-    padding-top: 2rem;
-    width: 10.5625rem;
-    height: 3.125rem;
+  .play-game-container.game-active .iframe-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100dvh; 
+    height: 100dvw; 
+    transform: translate(-50%, -50%) rotate(90deg);
+    
+    padding: 16px;
   }
 
-  #amazon {
-    width: 10.6875rem;
-    height: 3.125rem;
-    padding-bottom: 2.5rem;
+  .game-iframe {
+    width: 100%;
+    height: 100%;
   }
 
-  #planet-ship {
-    width: 80%;
-    height: auto;
-  }
-}
-
-@media (max-width: 567px) {
-  #google {
-    padding-right: 0rem;
-  }
-  #amazon {
-    display: block;
-  }
 }
