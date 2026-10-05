@@ -4,7 +4,7 @@
   --background-color: #000;
   --white-color: #fff;
   --h1-mobile-size: 36px;
-  --h1-desktop-size: 96px;
+  --h1-desktop-size: 76px;
   --h2-mobile-size: 18px;
   --h2-desktop-size: 48px;
   --text-size: 14px;
@@ -29,6 +29,7 @@ body {
   font-family: "Roboto", serif;
   padding: 0 24px;
   margin: auto;
+  max-width: 1440px;
 }
 
 h1 {
@@ -42,6 +43,10 @@ h3 {
   font-size: var(--h2-mobile-size);
   color: var(--white-color);
   margin-bottom: 16px;
+}
+
+.no-max-body-width{
+max-width: none;
 }
 
 .play-game-container {
@@ -129,27 +134,44 @@ p {
 }
 
 .svg-wrapper {
-  margin: 16px 0px;
+  margin: 16px 0;
   display: flex;
   flex-wrap: wrap;
-  flex: 0 0 150px;
   gap: 16px;
   justify-content: center;
 }
 
-.apple {
+.store-link {
+  display: block;
+  line-height: 0;
+}
+
+.store-link--apple {
   width: 150px;
-  height: auto;
-  min-height: 40px;
 }
 
-.google,
-.amazon {
+.store-link--google,
+.store-link--amazon {
   width: 164px;
+  border: 1px solid #a6a6a6;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.store-link--google, .store-link--apple {
+  border-radius: 7px;
+}
+
+.store-link--amazon {
+  border-radius: 10px;
+}
+
+.store-link svg {
+  display: block;
+  width: 100%;
   height: auto;
   min-height: 40px;
 }
-
 footer {
   padding: 24px 0;
 }
@@ -181,6 +203,15 @@ text-decoration: underline;
 
   @media (min-width: 992px) {
   /* rules for displays that are above 992px */
+
+  h1 {
+  font-size: var(--h1-desktop-size);
+  }
+
+  h2 {
+  font-size: var(--h2-desktop-size);
+  }
+
   .available{
     display: flex;
     justify-content: center;
