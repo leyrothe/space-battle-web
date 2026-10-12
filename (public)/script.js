@@ -3,6 +3,7 @@ const gameContainer = document.getElementById('game-container');
 const header = document.getElementById('header');
 
 playBtn.addEventListener('click', async() => {
+    document.body.classList.toggle('no-max-body-width');
     header.innerHTML = '';
     gameContainer.innerHTML = `
       <div class="iframe-wrapper">
