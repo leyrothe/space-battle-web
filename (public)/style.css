@@ -53,6 +53,7 @@ max-width: none;
   height: 50vh;
   margin: 0 auto;
   text-align: center;
+  position: relative;
   background-image: url("assets/Planet.svg");
   background-size: contain;
   background-position: center;
@@ -88,7 +89,7 @@ max-width: none;
 
 .play-button-wrapper {
   position: absolute;
-  top: 35%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
